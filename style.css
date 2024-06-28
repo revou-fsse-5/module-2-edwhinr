@@ -1,0 +1,372 @@
+@font-face {
+    font-family: 'Musim Semi Segar';
+    src: url('./asset/musim-semi-segar-cufonfonts-webfont/MusimSemiSegar-BWrm8.woff') format('woff');
+}
+
+@keyframes slide {
+    0%   {top:0px; bottom:0px;}
+    25%  {top:100px; bottom:0px;}
+    50%  {top:100px; bottom:100px;}
+    75%  {top:0px; bottom:100px;}
+    100% {top:0px; bottom:0px;}
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    }
+
+.header h1 {
+    font-family: 'Musim Semi Segar';
+}
+
+ul {
+    display: inline-flex;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    }
+
+li {
+    float: left;
+    }
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    }
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #11111123;
+    }
+
+    /* "Hide" checkbox -- moves it off screen*/
+#menu-btn {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    }
+  
+    /* Hide hamburger for bigger screens */
+.menu-icon {
+    visibility: hidden;
+    }
+    
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2rem;
+    }
+
+
+.content {
+    background-image: url(./asset/bg_spring.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 544px;
+}
+
+.content h1 {
+    color: rgba(56, 54, 55, 0.611);
+    text-shadow: 4px 4px 10px #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Musim Semi Segar';
+}
+
+.gallery h1 {
+    text-align: center;
+    padding: 25px 25px;
+    color: rgba(56, 54, 55, 0.611);
+    text-shadow: 4px 4px 10px #333;
+    font-family: 'Musim Semi Segar';
+}
+
+.gallery-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 20px;   
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.img1 {
+    grid-column: 1 / span 1;
+    transition: linear;
+    transition-delay: 3s;
+}
+
+.img1:hover {
+    width: 400px;
+}
+
+.img2 {
+    grid-column: 2 / span 1;
+    transition: linear;
+    transition-delay: 3s;
+}
+
+.img2:hover {
+    width: 400px;
+}
+
+.img3 {
+    grid-column: 3 / span 1;
+    transition: linear;
+    transition-delay: 3s;
+}
+
+.img3:hover {
+    width: 400px;
+}
+
+.video h1 {
+    text-align: center;
+    padding: 25px 25px;
+    color: rgba(56, 54, 55, 0.611);
+    text-shadow: 4px 4px 10px #333;
+    font-family: 'Musim Semi Segar';
+}
+
+.yt {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.animation {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    margin-bottom: 100px;
+}
+
+.footer {
+    position: absolute;
+    left: 50%;
+    width: 75%;
+    border-top: solid 3px rgba(56, 54, 55, 0.611);
+    transform: translateX(-50%);
+}
+
+.footer h2 {
+    text-align: center;
+    padding: 25px 25px;
+    color: rgba(56, 54, 55, 0.611);
+    text-shadow: 4px 4px 10px #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+
+/* start humberger menu */
+.header {
+    display: grid;
+    grid-template-areas:
+    "title   title   hamburger"
+    "nav     nav     nav";
+    }
+    
+h1 {
+    grid-area: title;
+    }
+
+ul {
+    display: grid;
+    list-style-type: none;
+    overflow: hidden;
+    }
+    
+li {
+    float: none;
+    }
+    
+li a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    }
+    
+.menu a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    }
+  
+.menu-btn {
+    display: none;
+    }
+  
+.menu-icon {
+    grid-area: hamburger;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 30px 20px 30px 0;
+    position: relative;
+    user-select: none;
+    visibility: visible;
+    }
+  
+.navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    width: 20px;
+    position: relative;
+    }
+  
+.navicon:before {
+    top: 5px;
+    }
+  
+.navicon:after {
+    top: -5px;
+    }
+  
+.navicon:before, .navicon:after {
+    background: #333;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    transition: all .2s ease-out;
+    }
+  
+.menu {
+    grid-area: nav;
+    max-width: unset;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    }
+  
+.menu a {
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    background-color: #eee;
+    width: 100%;
+    text-align: center;
+    }
+  
+.menu-btn:checked ~ .menu {
+    max-height: 240px;
+    }
+  
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+    }
+  
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    }
+  
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    }
+  
+.menu-btn:checked ~ .menu-icon .navicon:before,
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    top: 0;
+    }
+
+/* end humberger menu */
+
+/* start content background responsive */
+
+.content {
+    background-image: url(./asset/bg_res_spring.jpg);
+    background-position: initial;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 274x;
+}
+
+.content h1 {
+    color: black;
+}
+
+/* end content background responsive */
+/* start gallery responnsive */
+
+.gallery h1 {
+    color: rgba(0, 0, 0, 0.663);
+}
+
+.gallery-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 10px;   
+}
+
+.img1 {
+    grid-column: 1 / span 2;
+}
+
+.img2 {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.img3 {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+iframe {
+    max-width: 75%;
+    height: 75%;
+}
+
+}
