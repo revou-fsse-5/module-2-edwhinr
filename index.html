@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <header class="header">
             <h1>Logo</h1>
             <input class="menu-btn" type="checkbox" id="menu-btn" />
             <label class="menu-icon" for="menu-btn">
@@ -21,28 +21,40 @@
                     <li><a class='nav-item' href="#">Contact</a></li>
                 </ul>
             </nav> 
-        </div>
-        <div class="main-content">
-            <div class="content">
-                <h1>Spring Season</h1>
-            </div>
-            <div class="gallery">
+        </header>
+        <main class="main-content">
+            <section class="content">
+                <h1>SEASON</h1>
+            </section>
+            <gallery class="gallery">
                 <h1>Gallery</h1>
-                <div class="gallery-content">
+                <content class="gallery-content">
                     <picture class="img1">
                         <source srcset="./asset/img1_res.jpeg" media="(max-width:600px)">
-                        <img src="./asset/img1.jpg" alt="" width="350" height="300">
+                        <img src="./asset/img1.jpg" alt="">
                     </picture>
                     <picture class="img2">
                         <source srcset="./asset/img2_res.jpg" media="(max-width:600px)">
-                        <img src="./asset/img2.jpg" alt="" width="350" height="300">
+                        <img src="./asset/img2.jpg" alt="">
                     </picture>
                     <picture class="img3">
                         <source src="./asset/img3_res.jpg" media="(max-width:600px)">
-                        <img src="./asset/img3.png" alt="" width="350" height="300">
+                        <img src="./asset/img3.png" alt="">
                     </picture>
-                </div>
-            </div>
+                    <picture class="img4">
+                        <source srcset="./asset/img4_res.jpg" media="(max-width:600px)">
+                        <img src="./asset/img4.jpg" alt="">
+                    </picture>
+                    <picture class="img5">
+                        <source srcset="./asset/img5_res.jpg" media="(max-width:600px)">
+                        <img src="./asset/img5.jpg" alt="">
+                    </picture>
+                    <picture class="img6">
+                        <source src="./asset/img6_res.jpg" media="(max-width:600px)">
+                        <img src="./asset/img6.jpg" alt="">
+                    </picture>
+                </content>
+            </gallery>
             <div class="video">
                 <h1>Video</h1>
                 <div class="yt">
@@ -50,21 +62,86 @@
                 </div>
             </div>
             <div class="animation">
-                <img src="./asset/logo.png" alt="" width="200" height="140">
+                <div class="slides">
+                    <input type="radio" name="r" id="radio1" checked>
+                    <input type="radio" name="r" id="radio2">
+                    <input type="radio" name="r" id="radio3">
+                    <input type="radio" name="r" id="radio4">
+                    <div class="slide s1">
+                        <img src="./asset/logo.png" alt="" width="200" height="140">
+                    </div>
+                    <div class="slide">
+                        <img src="./asset/logo2.png" alt="" width="200" height="140">
+                    </div>
+                    <div class="slide">
+                        <img src="./asset/logo3.png" alt="" width="200" height="140">
+                    </div>
+                    <div class="slide">
+                        <img src="./asset/logo4.png" alt="" width="200" height="140">
+                    </div>
+                    <div class="navigation">
+                        <label for="radio1" class="bar bar1"></label>
+                        <label for="radio2" class="bar bar2"></label>
+                        <label for="radio3" class="bar bar3"></label>
+                        <label for="radio4" class="bar bar4"></label>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="footer">
+        </main>
+        <footer class="footer">
             <h2>Contact Us</h2>
             <div class="footer-content">
-                <p><b>Main Office</b>
-                    <br>xx xxxxxxxxxx Mxxe xxxx
-                    <br>Sxxxxxxa, Kxxxi Txxxr
-                    <br>Kxxxxxxxxn Txxxr – Indonesia
-                    <br>Telp: +62 xxx xxx xxx
-                    <br>Fax: +62 xxx xxx xxx
-                    <br>Email: info@xxxx.xxx</p>
+                <content class="footer-content1">
+                    <p><b>Lorem ipsum dolor sit amet </b>
+                        <br>consectetur adipisicing elit. 
+                        <br>Necessitatibus maxime voluptate 
+                        <br>quibusdam eos voluptatibus quod 
+                        <br>dolore dicta adipisci eligendi 
+                        <br>voluptas magni sequi, provident 
+                        <br>quisquam sint illum saepe iusto 
+                        <br>ab ipsam.
+                    </p>
+                </content>
+                <content class="footer-content2">
+                    <p><b>Main Office</b>
+                        <br>xx xxxxxxxxxx Mxxe xxxx
+                        <br>Sxxxxxxa, Kxxxi Txxxr
+                        <br>Kxxxxxxxxn Txxxr – Indonesia
+                        <br>Telp: +62 xxx xxx xxx
+                        <br>Fax: +62 xxx xxx xxx
+                        <br>Email: info@xxxx.xxx</p>
+                </content>
+                <content class="footer-content3">
+                    <p><b>Lorem ipsum dolor sit amet </b>
+                        <br>consectetur adipisicing elit. 
+                        <br>Necessitatibus maxime voluptate 
+                        <br>quibusdam eos voluptatibus quod 
+                        <br>dolore dicta adipisci eligendi 
+                        <br>voluptas magni sequi, provident 
+                        <br>quisquam sint illum saepe iusto 
+                        <br>ab ipsam.
+                    </p>
+                </content>
             </div>
-        </div>
+            <div class="light-nightmode">
+                <button onclick="darkMode()">Darkmode</button>
+                <button onclick="lightMode()">LightMode</button>
+                <script>
+                    function darkMode() {
+                        let element = document.body;
+                        let content = document.getElementById("DarkModetext");
+                        element.className = "dark-mode";
+                        content.innerText = "Dark Mode is ON";
+                    }
+                    function lightMode() {
+                        let element = document.body;
+                        let content = document.getElementById("DarkModetext");
+                        element.className = "light-mode";
+                        content.innerText = "Dark Mode is OFF";
+                    }
+                </script>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
