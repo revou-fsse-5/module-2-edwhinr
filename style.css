@@ -3,18 +3,38 @@
     src: url('./asset/musim-semi-segar-cufonfonts-webfont/MusimSemiSegar-BWrm8.woff') format('woff');
 }
 
-@keyframes slide {
-    0%   {top:0px; bottom:0px;}
-    25%  {top:100px; bottom:0px;}
-    50%  {top:100px; bottom:100px;}
-    75%  {top:0px; bottom:100px;}
-    100% {top:0px; bottom:0px;}
-  }
-
 * {
     padding: 0;
     margin: 0;
     }
+
+body {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode li a{
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .main-content h1{
+    color: white;
+}
+
+.dark-mode .footer h2{
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
 
 .header {
     display: flex;
@@ -76,7 +96,8 @@ li a:hover {
 
 .content {
     background-image: url(./asset/bg_spring.jpg);
-    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     opacity: 0.8;
     position: relative;
@@ -105,45 +126,79 @@ li a:hover {
 
 .gallery-content {
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-    padding: 20px;   
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+}
+
+.img1, .img2, .img3, .img4, .img5, .img6 {
+    position: relative;
 }
 
 img {
     max-width: 100%;
     height: 100%;
     opacity: 0.8;
+    object-fit: cover;
 }
 
 .img1 {
-    grid-column: 1 / span 1;
-    transition: linear;
-    transition-delay: 3s;
-}
-
-.img1:hover {
-    width: 400px;
+    grid-row: 1 / span 2;
 }
 
 .img2 {
-    grid-column: 2 / span 1;
-    transition: linear;
-    transition-delay: 3s;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 2;
 }
 
-.img2:hover {
-    width: 400px;
-}
 
 .img3 {
-    grid-column: 3 / span 1;
-    transition: linear;
-    transition-delay: 3s;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
 }
 
-.img3:hover {
-    width: 400px;
+.img4 {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+}
+
+.img5 {
+    grid-row: 1 / span 1;
+    grid-column: 4 / span 1;
+}
+
+.img6 {
+    grid-row: 2 / span 1;
+    grid-column: 4 / span 1;
+}
+
+.img1 img, .img2 img, .img3 img, .img4 img, .img5 img, .img6 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.img1:hover img {
+    content: url(./asset/img1_hover.jpeg);
+}
+
+.img2:hover img {
+    content: url(./asset/img2_hover.jpg);
+}
+
+.img3:hover img {
+    content: url(./asset/img3_hover.jpg);
+}
+
+.img4:hover img {
+    content: url(./asset/img4_hover.jpg);
+}
+
+.img5:hover img {
+    content: url(./asset/img5_hover.jpg);
+}
+
+.img6:hover img {
+    content: url(./asset/img6_hover.jpg);
 }
 
 .video h1 {
@@ -162,14 +217,101 @@ img {
     margin-bottom: 20px;
 }
 
-.animation {
-    display: flex;
-    justify-content: center;
+@keyframes slide {
+    0%   {top:0px; bottom:0px;}
+    25%  {top:100px; bottom:0px;}
+    50%  {top:100px; bottom:100px;}
+    75%  {top:0px; bottom:100px;}
+    100% {top:0px; bottom:0px;}
+}
+
+.animation{
+    width: 250px;
+    height: 190px;
     position: relative;
+    overflow: hidden;
     animation-name: slide;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     margin-bottom: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.animation .slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slides .slide{
+    width: 20%;
+    transition: 0.8s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.slides input{
+    position: absolute;
+    visibility: hidden;
+}
+
+.navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.navigation .bar{
+    width: 50px;
+    height: 15px;
+    border: 2px solid rgba(56, 54, 55, 0.611);
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.bar:hover{
+    background: rgba(56, 54, 55, 0.611);
+}
+
+#radio1:checked ~ .s1{
+    margin-left: 0;
+}
+#radio2:checked ~ .s1{
+    margin-left: -20%;
+}
+#radio3:checked ~ .s1{
+    margin-left: -40%;
+}
+#radio4:checked ~ .s1{
+    margin-left: -60%;
+}
+#radio5:checked ~ .s1{
+    margin-left: -80%;
+}
+
+#radio1:checked ~ .navigation .bar1{
+    background: #fff;
+}
+#radio2:checked ~ .navigation .bar2{
+    background: #fff;
+}
+#radio3:checked ~ .navigation .bar3{
+    background: #fff;
+}
+#radio4:checked ~ .navigation .bar4{
+    background: #fff;
+}
+#radio5:checked ~ .navigation .bar5{
+    background: #fff;
 }
 
 .footer {
@@ -185,12 +327,39 @@ img {
     padding: 25px 25px;
     color: rgba(56, 54, 55, 0.611);
     text-shadow: 4px 4px 10px #333;
+    font-family: 'Musim Semi Segar';
 }
 
 .footer-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-content1 {
+    grid-column: 1;
+    margin: 10px;
+}
+
+.footer-content2 {
+    grid-column: 2;
+    margin: 10px;
+}
+
+.footer-content3 {
+    grid-column: 3;
+    margin: 10px;
+}
+
+.light-nightmode {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+}
+
+.light-nightmode button {
+    padding: 15px;
+    margin: 5px;
 }
 
 @media screen and (max-width: 600px) {
@@ -351,22 +520,63 @@ li a {
 }
 
 .img1 {
+    grid-row: 1 / span 1;
     grid-column: 1 / span 2;
 }
 
 .img2 {
-    grid-row: 2;
-    grid-column: 1;
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 2;
 }
 
 .img3 {
-    grid-row: 2;
-    grid-column: 2;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 4;
+}
+
+.img4 {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.img5 {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
+}
+
+.img6 {
+    grid-row: 3 / span 1;
+    grid-column: 4 / span 1;
 }
 
 iframe {
     max-width: 75%;
     height: 75%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-content1 {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 15px;
+}
+
+.footer-content2 {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 15px;
+}
+
+.footer-content3 {
+    grid-column: 1;
+    grid-row: 3;
+    margin-bottom: 15px;
 }
 
 }
