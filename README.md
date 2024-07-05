@@ -83,4 +83,4 @@ Once you deploy the site, it will be automatically deployed when you push someth
 <h2>Deploy Link</h2>
 <link>https://www.seasonnclub.site/</link>
 <br><br>
-<img src="./asset/Screenshot 2024-07-02 213450.png">
+<img src="./asset/Screenshot 2024-07-06 034417.png">
